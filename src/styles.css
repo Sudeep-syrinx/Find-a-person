@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@360;460;560&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --color-paper: #f3eee6;
+  --color-ink: #16130f;
+  --color-mute: #6e675e;
+  --color-line: #d8d0c4;
+  --color-ember: #c4452d;
+  --color-card: #faf7f2;
+  --color-ink-soft: #2a241e;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+  body {
+    font-family: var(--font-sans);
+    min-height: 100%;
+  }
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-paper);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}

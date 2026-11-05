@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Nām",
+      "hasCanvas": false,
+      "bodyTextLen": 304,
+      "bodyTextHash": "6938fbd5d31257a514c2996d71fe7fec01b4c15ad3f6c6d22d82709eb35e86a8",
+      "bodyTextPrefix": "NĀM · REGISTER SYNTHETIC PROFILES · INDIA 15:47 IST DIRECTORY 12",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Nām",
+      "hasCanvas": false,
+      "bodyTextLen": 277,
+      "bodyTextHash": "27673f879220cf8cd7ccbe43a85e7ddbb9fb18c798431539dfe02488c3bc0761",
+      "bodyTextPrefix": "NĀM · REGISTER 15:47 IST DIRECTORY 12,000 NAMES Find a person. T",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

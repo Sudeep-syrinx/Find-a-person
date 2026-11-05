@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nām</title>
+  <link rel="preconnect" href="https://googleapis.com" />
+  <link rel="stylesheet" href="https://googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500&display=swap" />
+  <style>
+    :root {
+      --bg: #f4efe9;
+      --text: #2b2621;
+      --accent: #bc4626;
+      --border: #dfd9d0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+    main { max-width: 650px; width: 100%; margin-top: 2rem; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+      margin-bottom: 3rem;
+      color: #7a7065;
+    }
+    .kicker {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    h1 em { font-style: italic; }
+    .lede { font-size: 1.15rem; color: #5a5249; line-height: 1.5; margin-bottom: 2.5rem; }
+    form { position: relative; margin-bottom: 2rem; }
+    .bar { display: flex; border-bottom: 2px solid var(--text); padding-bottom: 0.5rem; }
+    input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 1.5rem;
+      font-family: inherit;
+      color: inherit;
+      outline: none;
+    }
+    input::placeholder { color: #b5aba0; font-family: 'Instrument Serif', serif; font-style: italic; }
+    button {
+      background: var(--text);
+      color: var(--bg);
+      border: none;
+      padding: 0.5rem 1.5rem;
+      font-family: inherit;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: opacity 0.2s;
+    }
+    button:hover { opacity: 0.9; }
+    #hits {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #faf7f2;
+      border: 1px solid var(--border);
+      list-style: none;
+      z-index: 10;
+      max-height: 250px;
+      overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    #hits li button {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      color: var(--text);
+      padding: 0.75rem 1rem;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      text-transform: none;
+      letter-spacing: normal;
+      font-size: 1.1rem;
+    }
+    #hits li button:hover { background: #f0e9df; }
+    .dossier {
+      background: #faf7f2;
+      border: 1px solid var(--border);
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .dossier .meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #9c9184;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .dossier h2 { font-family: 'Instrument Serif', serif; font-size: 2.5rem; font-weight: 400; margin-bottom: 0.25rem; }
+    .dossier .body > p { font-size: 0.95rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2rem; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    @media (min-width: 480px) { .grid { grid-template-columns: 1fr 2fr; } }
+    dt { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #8e8376; margin-bottom: 0.25rem; }
+    dd { font-size: 1.1rem; font-weight: 400; line-height: 1.4; }
+    .note { font-size: 0.8rem; color: #a3988b; margin-top: 2rem; padding-top: 1rem; border-top: 1px dashed var(--border); }
+    .miss { font-size: 1.2rem; color: #7a7065; font-style: italic; margin-top: 3rem; text-align: center; }
+    .sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <span>Nām · Register</span>
+      <span>Synthetic profiles · India</span>
+    </header>
+    <!-- The label below is linked to the 300,000 count code script -->
+    <p class="kicker" id="directory-counter">Directory · 300,000 Names</p>
+    <h1>Find a <em>person</em>.</h1>
+    <p class="lede">Type a name from your list. A match opens a mock dossier containing an automated reference identity, phone structure, and simulated Indian address footprint.</p>
+    
+    <form id="search-form">
+      <label class="sr" for="q">Search by name</label>
+      <div class="bar">
+        <input id="q" autocomplete="off" placeholder="Start typing a name" />
+        <button type="submit">Search</button>
+      </div>
+      <ul id="hits" hidden></ul>
+    </form>
+    
+    <section id="result" hidden></section>
+  </main>
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Nām",
+      "hasCanvas": false,
+      "bodyTextLen": 299,
+      "bodyTextHash": "0e19530a094f1c4a9ff6fee71b4d3b4649766e82278a75e5d9db7ad0090c39ef",
+      "bodyTextPrefix": "NĀM · REGISTER SYNTHETIC PROFILES · INDIA 15:48 IST DIRECTORY — ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Nām",
+      "hasCanvas": false,
+      "bodyTextLen": 272,
+      "bodyTextHash": "8f6dc5ecfa59bea645af4c79577248a7a18723e1e63d0cd8324807ce34e97d24",
+      "bodyTextPrefix": "NĀM · REGISTER 15:48 IST DIRECTORY — NAMES Find a person. Type a",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": true,
+  "baselineReasons": [
+    "desktop: body text replaced (similar length, page start changed)",
+    "mobile: body text replaced (similar length, page start changed)"
+  ]
+}
