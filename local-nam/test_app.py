@@ -86,3 +86,7 @@ def test_long_query_is_capped(client):
 def test_project_files_are_not_served(client):
     assert client.get("/app.py").status_code == 404
     assert client.get("/directory.db").status_code == 404
+
+
+def test_count(client):
+    assert client.get("/api/count").get_json() == {"count": len(NAMES)}

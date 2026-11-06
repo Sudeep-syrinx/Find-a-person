@@ -131,6 +131,16 @@ def search():
     })
 
 
+@app.get("/api/count")
+def count():
+    con = sqlite3.connect(DB_PATH)
+    try:
+        n = con.execute("SELECT COUNT(*) FROM people").fetchone()[0]
+    finally:
+        con.close()
+    return jsonify({"count": n})
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--rebuild", action="store_true")
