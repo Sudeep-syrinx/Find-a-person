@@ -12,3 +12,5 @@ screenshots/
 local-nam/directory.db
 local-nam/app.py.bak
 __pycache__/
+
+.pytest_cache/

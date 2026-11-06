@@ -24,3 +24,19 @@ Profile data is stored in the `train-0000X-of-00002.parquet` files.
 ## License
 
 No license specified yet.
+
+## Run
+
+```bash
+cd local-nam
+pip install -r requirements.txt
+python app.py --rebuild   # builds directory.db once
+python app.py
+```
+
+## Tests
+
+```bash
+cd local-nam
+python -m pytest -v
+```
