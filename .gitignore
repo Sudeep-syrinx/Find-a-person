@@ -1,1 +1,10 @@
 node_modules
+
+dataset.py
+massive_logic.py
+.vercel/
+.tanstack/
+node_modules/
+.grok/
+attachments/
+screenshots/
