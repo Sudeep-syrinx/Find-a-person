@@ -8,3 +8,7 @@ node_modules/
 .grok/
 attachments/
 screenshots/
+
+local-nam/directory.db
+local-nam/app.py.bak
+__pycache__/
